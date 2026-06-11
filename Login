@@ -1,0 +1,160 @@
+from IPython.display import HTML
+
+html_code = """
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5; /* Light gray background */
+  }
+
+  .container {
+    background-color: #ffffff; /* White card background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 380px;
+    text-align: center;
+  }
+
+  h2 {
+    color: rgb(171, 37, 70); /* Main Red Color */
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Darker text for labels */
+    font-weight: 400;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: rgb(171, 37, 70); /* Main Red Color on focus */
+    outline: none;
+  }
+
+  .button-group {
+    margin-top: 30px;
+  }
+
+  button {
+    background-color: rgb(171, 37, 70); /* Main Red Color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+
+  button:hover {
+    background-color: rgb(137, 30, 56); /* Darker Red on hover */
+  }
+
+  .secondary-button {
+    background-color: #1a73e8; /* A shade of blue, like BNB secondary colors */
+    color: white;
+  }
+
+  .secondary-button:hover {
+    background-color: #0d47a1; /* Darker blue on hover */
+  }
+
+  .toggle-link {
+    margin-top: 20px;
+    color: #1a73e8; /* Blue for links */
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+
+  .form-hidden {
+    display: none;
+  }
+</style>
+
+<div class="container">
+  <h2 id="formTitle">Login</h2>
+
+  <div id="loginForm">
+    <div class="form-group">
+      <label for="loginEmail">E-mail ou Usuário</label>
+      <input type="text" id="loginEmail" placeholder="Seu e-mail ou nome de usuário">
+    </div>
+    <div class="form-group">
+      <label for="loginPassword">Senha</label>
+      <input type="password" id="loginPassword" placeholder="Sua senha">
+    </div>
+    <div class="button-group">
+      <button type="submit">Entrar</button>
+    </div>
+    <p class="toggle-link" onclick="showRegister()">Ainda não tem conta? Cadastre-se</p>
+  </div>
+
+  <div id="registerForm" class="form-hidden">
+    <div class="form-group">
+      <label for="registerName">Nome Completo</label>
+      <input type="text" id="registerName" placeholder="Seu nome completo">
+    </div>
+    <div class="form-group">
+      <label for="registerEmail">E-mail</label>
+      <input type="email" id="registerEmail" placeholder="Seu e-mail">
+    </div>
+    <div class="form-group">
+      <label for="registerPassword">Criar Senha</label>
+      <input type="password" id="registerPassword" placeholder="Crie uma senha forte">
+    </div>
+    <div class="button-group">
+      <button type="submit" class="secondary-button">Cadastrar</button>
+    </div>
+    <p class="toggle-link" onclick="showLogin()">Já tem conta? Fazer Login</p>
+  </div>
+</div>
+
+<script>
+  function showRegister() {
+    document.getElementById('loginForm').classList.add('form-hidden');
+    document.getElementById('registerForm').classList.remove('form-hidden');
+    document.getElementById('formTitle').innerText = 'Cadastro';
+  }
+
+  function showLogin() {
+    document.getElementById('registerForm').classList.add('form-hidden');
+    document.getElementById('loginForm').classList.remove('form-hidden');
+    document.getElementById('formTitle').innerText = 'Login';
+  }
+</script>
+"""
+
+display(HTML(html_code))
