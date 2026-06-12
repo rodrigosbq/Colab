@@ -313,8 +313,7 @@ html_code = """
 
 <div class="main-container">
   <div class="header">
-    <h1>BNB na Mão</h1>
-    <div class="user-info">
+      <div class="user-info">
       <span>Olá, Usuário!</span>
       <div class="avatar">U</div>
     </div>
